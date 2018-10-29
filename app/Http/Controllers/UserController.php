@@ -129,6 +129,13 @@ class UserController extends Controller
     public function destroy($id)
     {
         $user = User::findOrFail($id);
+
+        if ($user->hasRole('Admin'))
+
+        Role::where('name', 'User')->first()
+
+
+
         $user->delete();
 
         return redirect()->route('users.index')

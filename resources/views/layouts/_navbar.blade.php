@@ -29,7 +29,7 @@
                         @endif
                     </li>
                 @else
-                    @if (Auth::user()->hasRole('admin'))
+                    @if (Auth::user()->hasRole('Admin'))
                         <li class="nav-item{{ starts_with(Route::currentRouteName(), 'users.') ? ' active' : '' }}">
                             <a class="nav-link" href="{{ route('users.index') }}">@lang('menus.users.index')</a>
                         </li>
