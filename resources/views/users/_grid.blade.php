@@ -5,6 +5,7 @@
                 <th width="1x">@lang('menus.iteration')</th>
                 <th>@lang('models.user.name')</th>
                 <th>@lang('models.user.username')</th>
+                <th>@lang('models.user.email')</th>
                 <th>@lang('models.role.name')</th>
                 <th width="1px">@lang('menus.action')</th>
             </tr>
@@ -16,6 +17,7 @@
                     <td style="white-space:normal;">{{ ++$i }}</td>
                     <td style="white-space:normal;">{{ $user->name }}</td>
                     <td style="white-space:normal;">{{ $user->username }}</td>
+                    <td style="white-space:normal;">{{ $user->email }}</td>
                     <td style="white-space:normal;">{{ $user->roles->pluck('name')->implode(', ') }}</td>
                     <td style="white-space:normal;">
                         <div class="btn-group btn-group-sm" role="group" style="display:flex;" aria-label="Action buttons">
@@ -40,7 +42,7 @@
                 </tr>
             @empty
                 <tr>
-                    <td class="danger" colspan="5">@lang('messages.empty-record')</td>
+                    <td class="danger" colspan="6">@lang('messages.empty-record')</td>
                 </tr>
             @endforelse
         </tbody>
