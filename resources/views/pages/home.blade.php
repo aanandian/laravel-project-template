@@ -10,13 +10,9 @@
                 </div>
 
                 <div class="card-body">
-                    @if (session('resent'))
-                        <div class="alert alert-success" role="alert">
-                            @lang('messages.success-resent-password')
-                        </div>
-                    @endif
+                    @include('layouts._alert')
 
-                    @lang('text.email-verification', ['link' => route('verification.resend')])
+                    @lang('messages.you-are-logged-in')
                 </div>
             </div>
         </div>
