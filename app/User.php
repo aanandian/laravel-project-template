@@ -28,7 +28,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password',
+        'remember_token',
     ];
 
     public function roles()
@@ -39,8 +40,7 @@ class User extends Authenticatable
     public function authorizeRoles($roles)
     {
         if (is_array($roles)) {
-            return $this->hasAnyRole($roles) ||
-                abort(401, 'This action is unauthorized.');
+            return $this->hasAnyRole($roles) || abort(401, 'This action is unauthorized.');
         }
 
         return $this->hasRole($roles) ||

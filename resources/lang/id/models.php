@@ -33,4 +33,12 @@ return [
         'remember'              => 'Ingat Saya',
     ],
 
+    'role'          => [
+        'id'            => 'ID',
+        'name'          => 'Peran',
+        'description'   => 'Deskripsi',
+        'created_at'    => 'Dibuat pada',
+        'updated_at'    => 'Diperbarui pada',
+    ],
+
 ];

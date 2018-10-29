@@ -29,6 +29,12 @@
                         @endif
                     </li>
                 @else
+                    @if (Auth::user()->hasRole('admin'))
+                        <li class="nav-item{{ starts_with(Route::currentRouteName(), 'users.') ? ' active' : '' }}">
+                            <a class="nav-link" href="{{ route('users.index') }}">@lang('menus.users.index')</a>
+                        </li>
+                    @endif
+
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             @lang('menus.profile') <span class="caret"></span>
