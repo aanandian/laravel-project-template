@@ -130,15 +130,15 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
 
-        if ($user->hasRole('Admin'))
+        if ($user->hasRole('Admin') && Role::where('name', 'User')->count() == 1) {
+            return redirect()->route('users.index')
+                ->with('failed', __('messages.failed-deleted'));
+        } else {
+            $user->delete();
 
-        Role::where('name', 'User')->first()
+            return redirect()->route('users.index')
+                ->with('success', __('messages.success-deleted'));
+        }
 
-
-
-        $user->delete();
-
-        return redirect()->route('users.index')
-            ->with('success', __('messages.success-deleted'));
     }
 }
