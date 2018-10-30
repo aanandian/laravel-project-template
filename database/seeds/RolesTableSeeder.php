@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Role;
 
 class RolesTableSeeder extends Seeder
 {
@@ -12,14 +11,26 @@ class RolesTableSeeder extends Seeder
      */
     public function run()
     {
-        $admin = new Role();
-        $admin->name        = 'Admin';
-        $admin->description = 'A admin user';
-        $admin->save();
+        $file   = fopen(database_path('seeds/' . get_class($this) . '.csv'), 'r');
+        $header = true;
 
-        $user = new Role();
-        $user->name         = 'User';
-        $user->description  = 'A regular user';
-        $user->save();
+        while (($data = fgetcsv($file)) !== false) {
+            if ($header == true) {
+                $header = false;
+
+                continue;
+            }
+
+            \App\Role::updateOrCreate(
+                [
+                    'name' => $data[0],
+                ],
+                [
+                    'description' => $data[1],
+                ]
+            )->save();
+        }
+
+        fclose($file);
     }
 }

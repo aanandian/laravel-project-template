@@ -16,20 +16,64 @@ class UsersTableSeeder extends Seeder
         $role_admin = Role::where('name', 'Admin')->first();
         $role_user  = Role::where('name', 'User')->first();
 
-        $admin = new User();
-        $admin->name        = 'Admin';
-        $admin->username    = 'admin';
-        $admin->email       = 'admin@example.com';
-        $admin->password    = bcrypt('secret');
-        $admin->save();
-        $admin->roles()->attach($role_admin);
+        // Via model
+        User::updateOrCreate(
+            [
+                'username'  => 'admin',
+                'email'     => 'admin@example.com',
+            ],
+            [
+                'name'      => 'Administrator',
+                // 'username'  => 'admin',
+                // 'email'     => 'admin@example.com',
+                'password'  => Hash::make('secret'),
+            ]
+        )->save();
 
-        $user  = new User();
-        $user->name         = 'Customer';
-        $user->username     = 'user';
-        $user->email        = 'user@example.com';
-        $user->password     = bcrypt('secret');
-        $user->save();
-        $user->roles()->attach($role_user);
+        User::where([
+            'username'  => 'admin',
+            'email'     => 'admin@example.com',
+        ])
+        ->first()
+        ->roles()->attach($role_admin);
+
+        // Via CSV file
+        $file   = fopen(database_path('seeds/' . get_class($this) . '.csv'), 'r');
+        $header = true;
+
+        while (($data = fgetcsv($file)) !== false) {
+            if ($header == true) {
+                $header = false;
+
+                continue;
+            }
+
+            User::updateOrCreate(
+                [
+                    'username'  => $data[1],
+                    'email'     => $data[2],
+                ],
+                [
+                    'name'      => $data[0],
+                    'username'  => $data[1],
+                    'email'     => $data[2],
+                    'password'  => $data[3],
+                ]
+            )->save();
+
+            User::where([
+                'username'  => $data[1],
+                'email'     => $data[2],
+            ])
+            ->first()
+            ->roles()->attach($role_user);
+        }
+
+        fclose($file);
+
+        // Via factory
+        factory(User::class, 25)->create()->each(function ($user, $role_user) {
+            $user->roles()->attach(Role::where('name', 'User')->first());
+        });
     }
 }

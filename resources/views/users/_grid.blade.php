@@ -49,6 +49,4 @@
     </table>
 </div>
 
-<nav class="float-right" aria-label="Page navigation">
-    {{ $users->links() }}
-</nav>
+{{ $users->links() }}

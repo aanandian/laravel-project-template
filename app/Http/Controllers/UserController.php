@@ -6,7 +6,6 @@ use App\User;
 use App\Role;
 use App\Http\Requests\UserRequest;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -128,9 +127,10 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        $user = User::findOrFail($id);
+        $user       = User::findOrFail($id);
+        $user_admin = Role::where('name', 'Admin')->first()->users();
 
-        if ($user->hasRole('Admin') && Role::where('name', 'User')->count() == 1) {
+        if ($user->hasRole('Admin') && $user_admin->count() == 1) {
             return redirect()->route('users.index')
                 ->with('failed', __('messages.failed-deleted'));
         } else {
