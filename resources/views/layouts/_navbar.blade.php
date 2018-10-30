@@ -45,7 +45,7 @@
                                 {{ Auth::user()->name }}
                             </a>
 
-                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();var check=confirm(&quot;@lang('messages.confirm-logout')&quot;);if(check){document.getElementById('logout-form').submit();}">
                                 @lang('menus.logout')
                             </a>
 
