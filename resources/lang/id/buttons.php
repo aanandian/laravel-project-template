@@ -16,6 +16,7 @@ return [
     'start'             => 'Mulai',
     'register'          => 'Daftar',
     'login'             => 'Masuk',
+    'reset'             => 'Reset',
     'reset-password'    => 'Atur Ulang Sandi',
     'click'             => 'Klik',
     'close'             => 'Tutup',
