@@ -72,8 +72,8 @@ class UsersTableSeeder extends Seeder
         fclose($file);
 
         // Via factory
-        factory(User::class, 25)->create()->each(function ($user, $role_user) {
-            $user->roles()->attach(Role::where('name', 'User')->first());
+        factory(User::class, 25)->create()->each(function ($user) use ($role_user) {
+            $user->roles()->attach($role_user);
         });
     }
 }
