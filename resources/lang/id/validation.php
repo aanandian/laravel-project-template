@@ -143,7 +143,7 @@ return [
 
     'attributes' => [
         'id'                    => 'ID',
-        'name'                  => 'Nama Lengkap',
+        'name'                  => 'Nama',
         'username'              => 'Nama Pengguna',
         'email'                 => 'Surel',
         'password'              => 'Sandi',
