@@ -77,26 +77,22 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  object  $user
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(User $user)
     {
-        $user = User::findOrFail($id);
-
         return view('users.show', compact('user'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  object  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
-        $user = User::findOrFail($id);
-
         return view('users.edit', compact('user'));
     }
 
@@ -104,10 +100,10 @@ class UserController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \App\Http\Requests\UserRequest  $request
-     * @param  int  $id
+     * @param  object  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(UserRequest $request, $id)
+    public function update(UserRequest $request, User $user)
     {
         $user = User::findOrFail($id);
         $user_password = $user->password;
@@ -122,12 +118,11 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  object  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        $user       = User::findOrFail($id);
         $user_admin = Role::where('name', 'Admin')->first()->users();
 
         if ($user->hasRole('Admin') && $user_admin->count() == 1) {
