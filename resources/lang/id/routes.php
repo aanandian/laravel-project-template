@@ -21,14 +21,14 @@ return [
     'password.request'      => 'Permintaan Atur Ulang Sandi',
     'password.reset'        => 'Atur Ulang Sandi',
 
-    'users'     => [
-        'index'     => 'Data Pengguna',
-        'create'    => 'Pendaftaran Pengguna',
-        'store'     => 'Simpan Profil Pengguna',
-        'show'      => 'Profil Pengguna',
-        'edit'      => 'Ubah Profile Pengguna',
-        'update'    => 'Perbarui Profil Pengguna',
-        'destroy'   => 'Hapus Pengguna',
+    'users'         => [
+        'index'         => 'Data Pengguna',
+        'create'        => 'Pendaftaran Pengguna',
+        'store'         => 'Simpan Profil Pengguna',
+        'show'          => 'Profil Pengguna',
+        'edit'          => 'Ubah Profile Pengguna',
+        'update'        => 'Perbarui Profil Pengguna',
+        'destroy'       => 'Hapus Pengguna',
     ],
 
 ];
