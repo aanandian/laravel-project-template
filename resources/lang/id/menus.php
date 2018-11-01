@@ -27,12 +27,12 @@ return [
     'iteration'     => 'No',
     'action'        => 'Aksi',
 
-    'users'         => [
-        'index'         => 'Pengguna',
-        'create'        => 'Tambah Pengguna',
-        'show'          => 'Lihat Pengguna',
-        'edit'          => 'Ubah Pengguna',
-        'delete'        => 'Hapus Pengguna',
+    'users'     => [
+        'index'     => 'Pengguna',
+        'create'    => 'Tambah Pengguna',
+        'show'      => 'Lihat Pengguna',
+        'edit'      => 'Ubah Pengguna',
+        'delete'    => 'Hapus Pengguna',
     ],
 
 ];
