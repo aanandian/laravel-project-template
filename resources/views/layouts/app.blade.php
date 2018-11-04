@@ -22,7 +22,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    @stack('style')
+    @stack('styles')
 
     <!-- Scripts -->
     @stack('scripts_head')
