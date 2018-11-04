@@ -27,6 +27,8 @@ return [
     'failed-resent-password'    => 'Tautan verifikasi surel gagal dikirim ke surel Anda.',
     'you-are-logged-in'         => 'Anda telah login!',
     'confirm-logout'            => 'Apakah Anda yakin ingin keluar?',
+    'confirm-stored'            => 'Apakah Anda yakin ingin menyimpan item ini?',
+    'confirm-updated'           => 'Apakah Anda yakin ingin memperbarui item ini?',
     'confirm-delete'            => 'Apakah Anda yakin ingin menghapus item ini?',
     'empty-record'              => 'Tidak ada data yang ditemukan.',
     'page-not-found'            => 'Halaman tidak ditemukan.',
