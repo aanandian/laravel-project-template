@@ -33,7 +33,7 @@ class UserRequest extends FormRequest
             'password'  => 'required|string|min:6|confirmed',
         ];
 
-        if ($id)
+        if ($id != 'null')
         {
             $rules['password'] = 'nullable|string|min:6|max:16|confirmed';
         }
