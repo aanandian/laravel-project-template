@@ -14,7 +14,7 @@
         <tbody>
             @forelse ($users as $user)
                 <tr>
-                    <td style="white-space:normal;">{{ ++$i }}</td>
+                    <td style="white-space:normal;">{{ $loop->iteration }}</td>
                     <td style="white-space:normal;">{{ $user->name }}</td>
                     <td style="white-space:normal;">{{ $user->username }}</td>
                     <td style="white-space:normal;">{{ $user->email }}</td>
