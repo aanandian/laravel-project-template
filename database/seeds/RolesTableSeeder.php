@@ -21,7 +21,7 @@ class RolesTableSeeder extends Seeder
                 continue;
             }
 
-            \App\Role::updateOrCreate(
+            App\Role::updateOrCreate(
                 [
                     'name' => $data[0],
                 ],
