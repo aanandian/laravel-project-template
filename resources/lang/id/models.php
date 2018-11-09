@@ -20,10 +20,10 @@ return [
     '_search'       => 'Pencarian',
 
     'user'          => [
-        '_'                     => 'User',
+        '_'                     => 'Pengguna',
         'id'                    => 'ID',
-        'name'                  => 'Nama Lengkap',
-        'username'              => 'Nama Pengguna',
+        'name'                  => 'Nama',
+        'username'              => 'Username',
         'email'                 => 'Surel',
         'password'              => 'Sandi',
         'password_confirmation' => 'Konfirmasi Sandi',
