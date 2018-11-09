@@ -31,12 +31,18 @@ class UserController extends Controller
         $user = new User;
         $user->_search = $request->_search;
 
-        $users = User::when($request, function ($query) use ($request) {
-            $query->where('name', 'like', "%{$request->_search}%")
-                ->orWhere('username', 'like', "%{$request->_search}%")
-                ->orWhere('email', 'like', "%{$request->_search}%")
+        $users = User::when($request, function ($query) use ($user) {
+                $query->where(function ($query) use ($user) {
+                    //
+                })
+                ->where(function ($query) use ($user) {
+                    $query->where('name', 'like', "%{$user->_search}%")
+                        ->orWhere('username', 'like', "%{$user->_search}%")
+                        ->orWhere('email', 'like', "%{$user->_search}%");
+                })
                 ->orderBy('name', 'asc');
-        })->latest()->paginate(5);
+            })
+            ->latest()->paginate(5);
 
         $users->appends($request->only('_token', '_search'));
 
