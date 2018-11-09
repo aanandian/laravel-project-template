@@ -35,7 +35,7 @@ return [
     ],
 
     'role'          => [
-        '_'             => 'Pesan',
+        '_'             => 'Peran',
         'id'            => 'ID',
         'name'          => 'Peran',
         'description'   => 'Deskripsi',
