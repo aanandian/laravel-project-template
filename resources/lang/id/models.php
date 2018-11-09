@@ -20,6 +20,7 @@ return [
     '_search'       => 'Pencarian',
 
     'user'          => [
+        '_'                     => 'User',
         'id'                    => 'ID',
         'name'                  => 'Nama Lengkap',
         'username'              => 'Nama Pengguna',
@@ -34,6 +35,7 @@ return [
     ],
 
     'role'          => [
+        '_'             => 'Pesan',
         'id'            => 'ID',
         'name'          => 'Peran',
         'description'   => 'Deskripsi',
