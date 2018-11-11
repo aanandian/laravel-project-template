@@ -24,7 +24,7 @@ class UserRequest extends FormRequest
      */
     public function rules()
     {
-        $id = $this->route()->parameter('user') ? $this->route()->parameter('user') : 'null';
+        $id = $this->route()->parameter('user');
 
         $rules = [
             'name'      => 'required|string|max:32',
@@ -33,7 +33,7 @@ class UserRequest extends FormRequest
             'password'  => 'required|string|min:6|confirmed',
         ];
 
-        if ($id != 'null') {
+        if ($id != null) {
             $rules['password'] = 'nullable|string|min:6|max:16|confirmed';
         }
 
