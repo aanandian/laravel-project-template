@@ -43,7 +43,6 @@ class UserController extends Controller
                 ->orderBy('name', 'asc');
             })
             ->latest()->paginate(5);
-
         $users->appends($request->only('_token', '_search'));
 
         return view('users.index', compact('user', 'users'))
