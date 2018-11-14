@@ -7,19 +7,19 @@
             <div class="card">
                 <div class="card-header">
                     <div class="btn-group btn-group-sm float-right" role="group" aria-label="Action Buttons">
-                        <a class="btn btn-secondary" href="{{ route('users.index') }}" title="@lang('buttons.back')">
+                        <a class="btn btn-secondary" href="{{ route('buttons.addcations.index') }}" title="@lang('buttons.back')">
                             <i class="fa fa-arrow-left" aria-hidden="true"></i>
                         </a>
 
-                        <a class="btn btn-secondary" href="{{ route('users.create') }}" title="@lang('buttons.add')">
+                        <a class="btn btn-secondary" href="{{ route('buttons.addcations.create') }}" title="@lang('buttons.add')">
                             <i class="fa fa-plus" aria-hidden="true"></i>
                         </a>
 
-                        <a class="btn btn-secondary" href="{{ route('users.show', $user->id) }}" title="@lang('buttons.show')">
+                        <a class="btn btn-secondary" href="{{ route('buttons.addcations.show', $buttons.addcation->id) }}" title="@lang('buttons.show')">
                             <i class="fa fa-eye" aria-hidden="true"></i>
                         </a>
 
-                        <form class="btn-group btn-group-sm" method="POST" action="{{ route('users.destroy', $user->id) }}">
+                        <form class="btn-group btn-group-sm" method="POST" action="{{ route('buttons.addcations.destroy', $buttons.addcation->id) }}">
                             @csrf
                             @method('DELETE')
 
@@ -35,11 +35,11 @@
                 <div class="card-body">
                     @include('layouts._alert')
 
-                    <form method="POST" action="{{ route('users.update', $user->id) }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('buttons.addcations.update', $buttons.addcation->id) }}" enctype="multipart/form-data">
                         @csrf
                         @method('PATCH')
 
-                        @include('users._form')
+                        @include('buttons.addcations._form')
                     </form>
                 </div>
             </div>

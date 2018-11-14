@@ -11,7 +11,7 @@
                             <i class="fa fa-arrow-left" aria-hidden="true"></i>
                         </a>
 
-                        <a class="btn btn-secondary" href="{{ route('users.create') }}" title="@lang('buttons.create')">
+                        <a class="btn btn-secondary" href="{{ route('users.create') }}" title="@lang('buttons.add')">
                             <i class="fa fa-plus" aria-hidden="true"></i>
                         </a>
 

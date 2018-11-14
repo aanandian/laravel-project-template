@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">
                     <div class="btn-group btn-group-sm float-right" role="group" aria-label="Action buttons">
-                        <a class="btn btn-secondary" href="{{ route('users.create') }}" title="@lang('buttons.create')">
+                        <a class="btn btn-secondary" href="{{ route('users.create') }}" title="@lang('buttons.add')">
                             <i class="fa fa-plus" aria-hidden="true"></i>
                         </a>
                     </div>
