@@ -57,7 +57,7 @@ class UsersTableSeeder extends Seeder
                     'name'      => $data[0],
                     'username'  => $data[1],
                     'email'     => $data[2],
-                    'password'  => $data[3],
+                    'password'  => Hash::make($data[3]),
                 ]
             )->save();
 
