@@ -29,7 +29,7 @@
                         @endif
                     </li>
                 @else
-                    @if (Auth::user()->hasRole('Admin'))
+                    @if (auth()->user()->hasRole('Admin'))
                         <li class="nav-item{{ starts_with(Route::currentRouteName(), 'users.') ? ' active' : '' }}">
                             <a class="nav-link" href="{{ route('users.index') }}">@lang('menus.users.index')</a>
                         </li>
@@ -42,7 +42,7 @@
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item disabled" href="#">
-                                {{ Auth::user()->name }}
+                                {{ auth()->user()->name }}
                             </a>
 
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();var check=confirm(&quot;@lang('messages.confirm-logout')&quot;);if(check){document.getElementById('logout-form').submit();}">
