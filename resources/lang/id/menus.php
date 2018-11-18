@@ -34,7 +34,7 @@ return [
 
     'users'     => [
         'index'     => 'Pengguna',
-        'create'    => 'Buat Pengguna',
+        'create'    => 'Tambah Pengguna',
         'show'      => 'Lihat Pengguna',
         'edit'      => 'Ubah Pengguna',
         'delete'    => 'Hapus Pengguna',

@@ -39,7 +39,7 @@ return [
         'id'            => 'ID',
         'name'          => 'Peran',
         'description'   => 'Deskripsi',
-        'created_at'    => 'Dibuat pada',
+        'created_at'    => 'Ditambah pada',
         'updated_at'    => 'Diperbarui pada',
     ],
 
