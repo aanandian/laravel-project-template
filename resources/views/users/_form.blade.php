@@ -1,5 +1,5 @@
 @if ($user->id)
-    <div class="form-group row">
+    <div class="form-group row mb-0">
         <label for="id" class="col-md-4 col-form-label text-md-right">@lang('models.user.id')</label>
 
         <div class="col-md-6">
@@ -106,7 +106,7 @@
     </div>
 @endif
 
-<div class="form-group row mt-3">
+<div class="form-group row">
     <div class="col-md-6 offset-md-4">
         <button type="submit" class="btn btn-primary">
             @if ($user->id)
