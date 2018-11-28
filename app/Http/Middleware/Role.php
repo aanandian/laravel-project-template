@@ -14,7 +14,7 @@ class Role
      * @param  string  $accept
      * @return mixed
      */
-    public function handle($request, Closure $next, $accepts)
+    public function handle($request, Closure $next, ...$accepts)
     {
         $request->user()->authorizeRoles($accepts);
 
