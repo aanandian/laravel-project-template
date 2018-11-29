@@ -1,5 +1,5 @@
 @if ($user->id)
-    <div class="form-group row mb-0">
+    <div class="form-group row">
         <label for="id" class="col-md-4 col-form-label text-md-right">@lang('models.user.id')</label>
 
         <div class="col-md-6">
@@ -75,7 +75,7 @@
 </div>
 
 @if ($user->id)
-    <div class="form-group row mb-0{{ $errors->has('created_at') ? ' is-invalid' : '' }}">
+    <div class="form-group row">
         <label class="col-md-4 col-form-label text-md-right">@lang('models.user.created_at')</label>
 
         <div class="col-md-6">
@@ -87,7 +87,7 @@
         </div>
     </div>
 
-    <div class="form-group row mb-0{{ $errors->has('is-invalid') ? ' is-invalid' : '' }}">
+    <div class="form-group row">
         <label class="col-md-4 col-form-label text-md-right">@lang('models.user.updated_at')</label>
 
         <div class="col-md-6">
