@@ -46,7 +46,31 @@
             }
 
             .title {
-                font-size: 84px;
+                font-size: 46px;
+            }
+
+            @media (min-width: 576px) {
+                .title {
+                    font-size: 46px;
+                }
+            }
+
+            @media (min-width: 768px) {
+                .title {
+                    font-size: 84px;
+                }
+            }
+
+            @media (min-width: 992px) {
+                .title {
+                    font-size: 84px;
+                }
+            }
+
+            @media (min-width: 1200px) {
+                .title {
+                    font-size: 84px;
+                }
             }
 
             .links > a {
