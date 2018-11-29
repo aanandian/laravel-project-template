@@ -29,7 +29,7 @@ return [
 
     '_month'    => [
         '01'        => 'Januari',
-        '02'        => 'Febuari',
+        '02'        => 'Februari',
         '03'        => 'Maret',
         '04'        => 'April',
         '05'        => 'Mei',
