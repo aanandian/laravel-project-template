@@ -6,12 +6,6 @@
             <p class="form-control-plaintext">
                 {{ $user->id }}
             </p>
-
-            @if ($errors->has('id'))
-                <span class="invalid-feedback">
-                    <strong>{{ $errors->first('id') }}</strong>
-                </span>
-            @endif
         </div>
     </div>
 @endif
