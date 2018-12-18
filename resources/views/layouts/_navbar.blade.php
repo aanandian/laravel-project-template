@@ -19,11 +19,11 @@
             <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->
                 @guest
-                    <li class="nav-item">
+                    <li class="nav-item{{ Route::currentRouteName() == 'login' ? ' active' : '' }}">
                         <a class="nav-link" href="{{ route('login') }}">@lang('menus.login')</a>
                     </li>
 
-                    <li class="nav-item">
+                    <li class="nav-item{{ Route::currentRouteName() == 'register' ? ' active' : '' }}">
                         @if (Route::has('register'))
                             <a class="nav-link" href="{{ route('register') }}">@lang('menus.register')</a>
                         @endif
