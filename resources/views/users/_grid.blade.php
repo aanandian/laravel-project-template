@@ -2,7 +2,7 @@
     <table class="table table-hover table-sm">
         <thead>
             <tr>
-                <th width="1x">@lang('menus.iteration')</th>
+                <th width="1px">@lang('menus.iteration')</th>
                 <th>@lang('models.user.name')</th>
                 <th>@lang('models.user.username')</th>
                 <th>@lang('models.user.email')</th>
