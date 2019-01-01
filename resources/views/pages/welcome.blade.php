@@ -99,7 +99,7 @@
         @if (Route::has('login'))
             <div class="top-right links">
                 @auth
-                    <a href="{{ url('/home') }}">@lang('menus.home')</a>
+                    <a href="{{ route('home') }}">@lang('menus.home')</a>
                 @else
                     <a href="{{ route('login') }}">@lang('menus.login')</a>
                     <a href="{{ route('register') }}">@lang('menus.register')</a>
