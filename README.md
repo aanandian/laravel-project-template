@@ -1,3 +1,3 @@
 # Laravel Project Template
 
-My template for creating Laravel project
+Template for creating Laravel project
